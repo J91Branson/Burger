@@ -1,0 +1,44 @@
+<h1>burgers</h1>
+
+
+<h2>Has Eatten</h2>
+{{#each burgers}}
+    {{#if this.devoured}}
+    <li>
+        {{this.id}}. {{this.burger_name}}. {{this.devoured}}
+    </li>
+    {{/if}}
+{{/each}}
+
+<h2>To Eat</h2>
+{{#each burgers}}
+    {{#unless this.devoured}}
+    <li>
+        {{this.id}}. {{this.burger_name}}. {{this.devoured}}
+    </li>
+    {{/unless}}
+{{/each}}
+
+<h2>Create a Burger Plan</h2>
+<form id="addburger" class="button-size">
+    <textarea type="text" name="bname"></textarea>
+    <button type="submit">Save Burger</button>
+</form>
+
+<script>
+    $("#addburger").on("submit", function (event) {
+        event.preventDefault();
+        var newBurger = {
+            burger_name: $("#addburger [name=bname]").val().trim()
+        };
+        $.ajax("/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                console.log("created new burger");
+                // Reload the page to get the updated list
+                location.reload();
+            })
+    })
+</script>
