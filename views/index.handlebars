@@ -20,7 +20,15 @@
       <ul>
         {{#each cats}}
         {{#unless sleepy}}
-        {{> burgers/burger-block sleep=true}}
+        <li>
+	{{name}}
+
+	<button class="change-sleep" data-id="{{id}}" data-newsleep="true">
+		Eat It
+	</button>
+
+	<button class="delete-cat" data-id="{{this.id}}">Delete</button>
+</li>
 
         {{/unless}}
         {{/each}}
@@ -33,7 +41,16 @@
       <ul>
         {{#each cats}}
         {{#if sleepy}}
-        {{> burgers/burger-block sleep=false}}
+       <li>
+	{{name}}
+
+	<button class="change-sleep" data-id="{{id}}" data-newsleep="false">
+	Buy It
+	</button>
+
+	<button class="delete-cat" data-id="{{this.id}}">Delete</button>
+</li>
+
         {{/if}}
         {{/each}}
       </ul>
