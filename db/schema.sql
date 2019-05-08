@@ -1,17 +1,12 @@
-CREATE DATABASE burgers_db;
-USE burgers_db;
+### Schema
 
--- Created the table "schools" 
-CREATE TABLE burgers
+CREATE DATABASE cat_db;
+USE cat_db;
+
+CREATE TABLE cats
 (
-  id int AUTO_INCREMENT,
-  burger_name varchar (30) not null,
-  devoured boolean not null,
-  primary key(id)
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(255) NOT NULL,
+	sleepy BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
 );
-
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("The Kevin Bacon", true);
-
-insert into burgers (burger_name, devoured)
-VALUES ("Freshman 15", false);
