@@ -1,7 +1,8 @@
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+  background: #e2850c;
+  border-radius: 25px;
 }
 
 .label {
@@ -16,4 +17,28 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+}
+#Eat {
+  background: #f30707;
+  border-radius: 25px;
+}
+#Completed {
+  background: #4543ca;
+  border-radius: 25px;
+}
+#li2 {
+  padding: 5px;
+  margin: 5px;
+  background: #e0dad2;
+  border-radius: 25px;
+}
+body {
+  background-color: #cccfe3;
+background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+}
+#AddBurger {
+  padding: 5px;
+  margin: 5px;
+  background: #4543ca;
+  border-radius: 25px;
 }
